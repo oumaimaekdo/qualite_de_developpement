@@ -21,6 +21,10 @@ public class TestCalculatrice {
     }
 
     @Test
+    public void whenDividingByZero_ShouldThrowException() {
+        assertThrows(ArithmeticException.class, () -> calc.div(5, 0));
+    }
+    @Test
     public void whenMultiplyingMinusThreeAndFour_ShouldReturnMinusTwelve() {
         assertEquals(-12, this.calc.mult(-3, 4));
     }
