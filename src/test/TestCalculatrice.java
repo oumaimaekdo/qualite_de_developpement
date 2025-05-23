@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestCalculatrice {
+
     private Calculatrice calc;
 
     @BeforeEach
@@ -13,5 +14,15 @@ public class TestCalculatrice {
     @Test
     public void whenAddingFourAndSix_ShouldReturnTen() {
         assertEquals(10, calc.add(4, 6));
+    }
+
+    @Test
+    public void whenDividingFortyByTwo_ShouldReturnTwenty() {
+        assertEquals(20, this.calc.div(40, 2));
+    }
+
+    @Test
+    public void whenMultiplyingMinusThreeAndFour_ShouldReturnMinusTwelve() {
+        assertEquals(-12, this.calc.mult(-3, 4));
     }
 }
