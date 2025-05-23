@@ -1,22 +1,17 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestStatistique {
+    private Statistique stat;
+
+    @BeforeEach
+    public void init() {
+        this.stat = new Statistique();
+    }
 
     @Test
-    public void whenCalculatingMoyenneOfEightAndTwelve_ShouldReturnTen() {
-
-        Calculatrice calc = mock(Calculatrice.class);
-
-        when(calc.add(8, 12)).thenReturn(20);
-        when(calc.div(20, 2)).thenReturn(10);
-
-        Statistique stat = new Statistique();
-        stat.calculatrice = calc;
-
-        float resultat = stat.moyenne(8, 12);
-
-        assertEquals(10, resultat);
+    public void whenCalculatingAverageOfSeventyAndNinety_ShouldReturnEighty() {
+        assertEquals(80, stat.moyenne(70, 90));
     }
 }
